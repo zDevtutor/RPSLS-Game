@@ -5,11 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Import Luckiest font from google fonts for headings -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Google font: Luckiest -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Google font: Roboto -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -27,45 +31,45 @@
 		<title>RPSLS Game</title>
 	</head>
 	<body>
-		<div class="container mx-auto text-center mt-5">
-			<!-- Header -->
-			<header>
-				<h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
-			</header>
+		<!-- Header -->
+		<header class="text-center mt-5 p-4 p-sm-0">
+			<h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
+		</header>
 
+		<!-- Container -->
+		<div class="container mx-auto">
 			<!-- Game Content -->
 			<section>
-				<div class="rpsls-img">
-					<img src="./assets/img/RPSLS.png" alt="RPSLS Game" />
-				</div>
+				<!-- RPSLS Img -->
+				<img src="./assets/img/RPSLS.png" alt="RPSLS Game" />
 
 				<!-- Scoreboard Section -->
-				<div class="row justify-content-center mt-5">
-					<div class="col-3">
+				<div class="row justify-content-evenly mt-4">
+					<div class="col-md-2">
 						<!-- Button trigger modal -->
-						<button
-							type="button"
-							class="btn btn-primary"
-							data-bs-toggle="modal"
-							data-bs-target="#scoreboard"
-						>
-							Scoreboard
-						</button>
+						<div class="d-grid">
+							<button
+								type="button"
+								class="btn btn-primary"
+								data-bs-toggle="modal"
+								data-bs-target="#scoreboard"
+							>
+								Scoreboard
+							</button>
+						</div>
 
 						<!-- Modal -->
 						<div
 							class="modal fade"
 							id="scoreboard"
 							tabindex="-1"
-							aria-labelledby="exampleModalLabel"
+							aria-labelledby="scoreboard"
 							aria-hidden="true"
 						>
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">
-											Modal title
-										</h5>
+										<h5 class="modal-title" id="scoreboard">HighScores</h5>
 										<button
 											type="button"
 											class="btn-close"
@@ -73,17 +77,30 @@
 											aria-label="Close"
 										></button>
 									</div>
-									<div class="modal-body">...</div>
+									<div class="modal-body">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Score</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
 									<div class="modal-footer">
 										<button
 											type="button"
-											class="btn btn-secondary"
+											class="btn btn-primary"
+											data-bs-dismiss="modal"
+										>
+											Clear Scores
+										</button>
+										<button
+											type="button"
+											class="btn btn-primary"
 											data-bs-dismiss="modal"
 										>
 											Close
-										</button>
-										<button type="button" class="btn btn-primary">
-											Clear Scores
 										</button>
 									</div>
 								</div>
@@ -92,31 +109,31 @@
 					</div>
 
 					<!-- How to play? Section -->
-					<div class="col-3">
+					<div class="col-md-4 my-4 my-md-0">
 						<!-- Button trigger modal -->
-						<button
-							type="button"
-							class="btn btn-primary"
-							data-bs-toggle="modal"
-							data-bs-target="#how-to-play"
-						>
-							How To Play?
-						</button>
+						<div class="d-grid">
+							<button
+								type="button"
+								class="btn btn-primary"
+								data-bs-toggle="modal"
+								data-bs-target="#how-to-play"
+							>
+								How To Play?
+							</button>
+						</div>
 
 						<!-- Modal -->
 						<div
 							class="modal fade"
 							id="how-to-play"
 							tabindex="-1"
-							aria-labelledby="exampleModalLabel"
+							aria-labelledby="how-to-play"
 							aria-hidden="true"
 						>
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">
-											Modal title
-										</h5>
+										<h5 class="modal-title" id="how-to-play">The Game Rules</h5>
 										<button
 											type="button"
 											class="btn-close"
@@ -124,11 +141,57 @@
 											aria-label="Close"
 										></button>
 									</div>
-									<div class="modal-body">...</div>
+									<div class="modal-body">
+										<p>
+											The aim of the game is to play
+											<span class="highlight"
+												>Rock, Paper, Scissors, Lizard, and Spock</span
+											>
+											against the computer and to win as many rounds as you
+											want. The game will end after you win or lose against the
+											computer for the specified rounds.
+										</p>
+										<h5>How To Play?</h5>
+										<ul>
+											<li>Enter number of rounds you would like to play</li>
+											<li>
+												Choose game Level
+												<ul>
+													<li>Level1: Game, Paper, Scissors</li>
+													<li>Level2: Game, Paper, Scissors, Lizard</li>
+													<li>Level3: Game, Paper, Scissors, Lizard, Spock</li>
+												</ul>
+											</li>
+											<li>
+												Press <span class="highlight">Let's Play</span> button
+												to start the game
+											</li>
+											<li>
+												Once the game starts, you will be presented with the
+												available options for this level, select one of the
+												available options
+											</li>
+											<li>
+												The computer will choose its option against yours and
+												the first to achieve the specified rounds. Will win the
+												game.
+											</li>
+											<li>
+												You have the <span class="highlight">Back</span> button
+												if you would like to quit the game at any given time and
+												get back to the home area.
+											</li>
+											<li>
+												Once you win the game. You will have the option to save
+												your score and it will be available under the scoreboard
+												section
+											</li>
+										</ul>
+									</div>
 									<div class="modal-footer">
 										<button
 											type="button"
-											class="btn btn-secondary"
+											class="btn btn-primary"
 											data-bs-dismiss="modal"
 										>
 											Close
@@ -141,30 +204,39 @@
 				</div>
 
 				<!-- Let's Play Form -->
-				<form class="mt-5 mb-5">
-					<div class="mb-3">
-						<label for="numberOfRounds" class="form-label"
-							>Enter Number of Rounds</label
-						>
-						<input
-							type="number"
-							class="form-control"
-							id="numberOfRounds"
-							aria-describedby="numberOfRounds"
-						/>
+				<div class="row justify-content-center mt-5 mb-5">
+					<div class="col-md-6">
+						<form class="text-start">
+							<div class="mb-3">
+								<label for="numberOfRounds" class="form-label"
+									>Enter Number of Rounds</label
+								>
+								<input
+									type="number"
+									class="form-control"
+									id="numberOfRounds"
+									aria-describedby="numberOfRounds"
+									required
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="chooseYourLevel" class="form-label"
+									>Choose Your Level</label
+								>
+								<select id="chooseYourLevel" class="form-select" required>
+									<option>Level 1</option>
+									<option>Level 2</option>
+									<option>Level 3</option>
+								</select>
+							</div>
+							<div class="d-grid">
+								<button type="submit" class="btn btn-primary mx-auto">
+									Let's Play!
+								</button>
+							</div>
+						</form>
 					</div>
-					<div class="mb-3">
-						<label for="chooseYourLevel" class="form-label"
-							>Choose Your Level</label
-						>
-						<select id="chooseYourLevel" class="form-select">
-							<option>Level 1</option>
-							<option>Level 2</option>
-							<option>Level 3</option>
-						</select>
-					</div>
-					<button type="submit" class="btn btn-primary">Let's Play!</button>
-				</form>
+				</div>
 			</section>
 		</div>
 

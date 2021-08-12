@@ -1,37 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Import Luckiest font from google fonts for headings -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+		<!-- Import Luckiest font from google fonts for headings -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+			rel="stylesheet"
+		/>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<!-- Bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+			crossorigin="anonymous"
+		/>
 
-  <!-- Main Style -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+		<!-- Main Style -->
+		<link rel="stylesheet" href="./assets/css/style.css" />
 
-  <title>RPSLS Game</title>
-</head>
-<body>
+		<title>RPSLS Game</title>
+	</head>
+	<body>
+		<div class="container mx-auto text-center mt-5">
+			<!-- Header -->
+			<header>
+				<h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
+			</header>
 
-  <!-- Header -->
-  <header>
-    <h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
-  </header>
+			<!-- Game Content -->
+			<section>
+				<div class="rpsls-img">
+					<img src="./assets/img/RPSLS.png" alt="RPSLS Game" />
+				</div>
 
+				<!-- Scoreboard Section -->
+				<div class="row justify-content-center mt-5">
+					<div class="col-3">
+						<!-- Button trigger modal -->
+						<button
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#scoreboard"
+						>
+							Scoreboard
+						</button>
 
-  </section>
-  
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+						<!-- Modal -->
+						<div
+							class="modal fade"
+							id="scoreboard"
+							tabindex="-1"
+							aria-labelledby="exampleModalLabel"
+							aria-hidden="true"
+						>
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">
+											Modal title
+										</h5>
+										<button
+											type="button"
+											class="btn-close"
+											data-bs-dismiss="modal"
+											aria-label="Close"
+										></button>
+									</div>
+									<div class="modal-body">...</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-bs-dismiss="modal"
+										>
+											Close
+										</button>
+										<button type="button" class="btn btn-primary">
+											Clear Scores
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-  <!-- Main Script -->
-  <script src="./assets/js/app.js"></script>
-</body>
+					<!-- How to play? Section -->
+					<div class="col-3">
+						<!-- Button trigger modal -->
+						<button
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#how-to-play"
+						>
+							How To Play?
+						</button>
+
+						<!-- Modal -->
+						<div
+							class="modal fade"
+							id="how-to-play"
+							tabindex="-1"
+							aria-labelledby="exampleModalLabel"
+							aria-hidden="true"
+						>
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">
+											Modal title
+										</h5>
+										<button
+											type="button"
+											class="btn-close"
+											data-bs-dismiss="modal"
+											aria-label="Close"
+										></button>
+									</div>
+									<div class="modal-body">...</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-bs-dismiss="modal"
+										>
+											Close
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Let's Play Form -->
+				<form class="mt-5 mb-5">
+					<div class="mb-3">
+						<label for="numberOfRounds" class="form-label"
+							>Enter Number of Rounds</label
+						>
+						<input
+							type="number"
+							class="form-control"
+							id="numberOfRounds"
+							aria-describedby="numberOfRounds"
+						/>
+					</div>
+					<div class="mb-3">
+						<label for="chooseYourLevel" class="form-label"
+							>Choose Your Level</label
+						>
+						<select id="chooseYourLevel" class="form-select">
+							<option>Level 1</option>
+							<option>Level 2</option>
+							<option>Level 3</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-primary">Let's Play!</button>
+				</form>
+			</section>
+		</div>
+
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Main Script -->
+		<script src="./assets/js/app.js"></script>
+	</body>
 </html>

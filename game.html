@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Main Style -->
+		<link rel="stylesheet" href="./assets/css/style.css" />
+
+		<title>RPSLS - Play The Game</title>
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="text-center mt-5 p-4 p-sm-0">
+			<h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
+			<a href="index.html" class="btn btn-primary">Back</a>
+		</header>
+
+		<section class="container mx-auto text-center mt-5 mb-5">
+			<section id="game-play">
+				<p class="display-6">
+					First to reach
+					<span id="rounds" class="highlight fw-bold">0</span> wins!
+				</p>
+
+				<div class="row justify-content-between mt-5">
+					<div class="col-6">
+						<h5>Player</h5>
+						<span id="player-score">0</span>
+						<img class="mt-5 w-75" src="./assets/img/rock.png" alt="Rock" />
+					</div>
+					<div class="col-6">
+						<h5>Computer</h5>
+						<span id="computer-score">0</span>
+						<img class="mt-5 w-75" src="./assets/img/rock.png" alt="Rock" />
+					</div>
+				</div>
+				<p id="score-results" class="display-6 mt-4">Choose Your Option:</p>
+				<div id="user-options" class="row">
+					<div class="col">
+						<img src="assets/img/rock.png" alt="rock" />
+						<img src="assets/img/paper.png" alt="rock" />
+						<img src="assets/img/scissors.png" alt="rock" />
+						<img src="assets/img/lizard.png" alt="rock" />
+						<img src="assets/img/spock.png" alt="rock" />
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Main Script -->
+		<script src="./assets//js/app.js"></script>
+	</body>
+</html>

@@ -1,5 +1,9 @@
 /* This is the custom style applied on the game */
+/* Fonts Used */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap');
 
+/* Colors Used */
 :root {
 	--primary-color: #512d6d;
 	--dark-color: #283149;
@@ -25,15 +29,19 @@ th {
 	font-family: 'Luckiest Guy', cursive;
 }
 
-img {
-	width: 50%;
-	display: block;
-	margin: auto;
-}
-
 /* Custom Style */
 .container {
 	max-width: 50%;
+}
+
+.display-6 {
+	font-size: 24px;
+}
+
+#game-entry > img {
+	width: 50%;
+	display: block;
+	margin: auto;
 }
 
 .btn-primary,
@@ -62,6 +70,15 @@ img {
 	color: var(--play-color);
 }
 
+#player-score,
+#computer-score {
+	display: block;
+}
+
+#user-options img {
+	width: 75px;
+}
+
 /* Mobile Screens */
 @media screen and (max-width: 768px) and (min-width: 500px) {
 	.container {
@@ -70,7 +87,7 @@ img {
 }
 
 @media screen and (max-width: 500px) {
-	img {
+	#game-entry > img {
 		width: 70%;
 	}
 

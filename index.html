@@ -5,18 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Google font: Luckiest -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
-			rel="stylesheet"
-		/>
-
-		<!-- Google font: Roboto -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-
 		<!-- Bootstrap -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
@@ -28,7 +16,7 @@
 		<!-- Main Style -->
 		<link rel="stylesheet" href="./assets/css/style.css" />
 
-		<title>RPSLS Game</title>
+		<title>RPSLS Entry To The Game</title>
 	</head>
 	<body>
 		<!-- Header -->
@@ -37,9 +25,9 @@
 		</header>
 
 		<!-- Container -->
-		<div class="container mx-auto">
+		<section class="container mx-auto">
 			<!-- Game Content -->
-			<section>
+			<section id="game-entry">
 				<!-- RPSLS Img -->
 				<img src="./assets/img/RPSLS.png" alt="RPSLS Game" />
 
@@ -206,7 +194,12 @@
 				<!-- Let's Play Form -->
 				<div class="row justify-content-center mt-5 mb-5">
 					<div class="col-md-6">
-						<form class="text-start">
+						<form
+							action="game.html"
+							method="GET"
+							id="game-form"
+							class="text-start"
+						>
 							<div class="mb-3">
 								<label for="numberOfRounds" class="form-label"
 									>Enter Number of Rounds</label
@@ -238,7 +231,7 @@
 					</div>
 				</div>
 			</section>
-		</div>
+		</section>
 
 		<!-- Bootstrap JS -->
 		<script
@@ -246,8 +239,5 @@
 			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 			crossorigin="anonymous"
 		></script>
-
-		<!-- Main Script -->
-		<script src="./assets/js/app.js"></script>
 	</body>
 </html>

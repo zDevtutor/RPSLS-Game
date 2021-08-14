@@ -201,25 +201,36 @@
 							class="text-start"
 						>
 							<div class="mb-3">
-								<label for="numberOfRounds" class="form-label"
+								<label for="rounds-number" class="form-label"
 									>Enter Number of Rounds</label
 								>
 								<input
 									type="number"
+									name="roundsNumber"
 									class="form-control"
-									id="numberOfRounds"
+									id="rounds-number"
 									aria-describedby="numberOfRounds"
 									required
 								/>
+								<small
+									id="validation-message"
+									class="form-text text-warning d-none"
+									>Rounds number should be between 1 and 10</small
+								>
 							</div>
 							<div class="mb-3">
-								<label for="chooseYourLevel" class="form-label"
+								<label for="level-select" class="form-label"
 									>Choose Your Level</label
 								>
-								<select id="chooseYourLevel" class="form-select" required>
-									<option>Level 1</option>
-									<option>Level 2</option>
-									<option>Level 3</option>
+								<select
+									name="gameLevel"
+									id="level-select"
+									class="form-select"
+									required
+								>
+									<option value="level1">Level 1</option>
+									<option value="level2">Level 2</option>
+									<option value="level3">Level 3</option>
 								</select>
 							</div>
 							<div class="d-grid">
@@ -239,5 +250,19 @@
 			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 			crossorigin="anonymous"
 		></script>
+		<script>
+			// Game Form DOM Elements
+			const gameForm = document.getElementById('game-form');
+			const roundsNumber = document.getElementById('rounds-number');
+			const validationMassege = document.getElementById('validation-message');
+
+			// Validate roundsNumber field to accept min and max values of 0 and 10
+			gameForm.addEventListener('submit', e => {
+				if (roundsNumber.value <= 0 || roundsNumber.value > 10) {
+					e.preventDefault();
+					validationMassege.classList.remove('d-none');
+				}
+			});
+		</script>
 	</body>
 </html>

@@ -1,8 +1,7 @@
-const usp = new URLSearchParams(window.location.search);
+// URL params [Rounds Number, Game Level]
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const roundsNumber = urlParams.get('roundsNumber');
+const gameLevel = urlParams.get('gameLevel');
 
-const roundsNumber = usp.get('roundsNumber');
-const gameLevel = usp.get('gameLevel');
-
-const rounds = document.getElementById('rounds');
-
-rounds.innerHTML = roundsNumber;
+// Game Play DOM Elements

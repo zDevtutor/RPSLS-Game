@@ -57,7 +57,7 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="scoreboard">HighScores</h5>
+										<h5 class="modal-title" id="scoreboard">Scoreboard</h5>
 										<button
 											type="button"
 											class="btn-close"
@@ -69,10 +69,16 @@
 										<table class="table">
 											<thead>
 												<tr>
-													<th>Name</th>
-													<th>Score</th>
+													<th>Your Wins</th>
+													<th>Your Loses</th>
 												</tr>
 											</thead>
+											<tbody>
+												<tr>
+													<td id="wins">0</td>
+													<td id="losses">0</td>
+												</tr>
+											</tbody>
 										</table>
 									</div>
 									<div class="modal-footer">
@@ -80,6 +86,7 @@
 											type="button"
 											class="btn btn-primary"
 											data-bs-dismiss="modal"
+											id="clear-score"
 										>
 											Clear Scores
 										</button>
@@ -256,12 +263,28 @@
 			const roundsNumber = document.getElementById('rounds-number');
 			const validationMassege = document.getElementById('validation-message');
 
+			const userWins = document.getElementById('wins');
+			const userLosses = document.getElementById('losses');
+
+			const clearScore = document.getElementById('clear-score');
+
 			// Validate roundsNumber field to accept min and max values of 0 and 10
 			gameForm.addEventListener('submit', e => {
 				if (roundsNumber.value <= 0 || roundsNumber.value > 10) {
 					e.preventDefault();
 					validationMassege.classList.remove('d-none');
 				}
+			});
+
+			// Get Local Storage Items
+			userWins.innerText = localStorage.getItem('userWins');
+			userLosses.innerText = localStorage.getItem('userLost');
+
+			// Clear Local Storage
+			clearScore.addEventListener('click', () => {
+				localStorage.clear();
+				userWins.innerText = 0;
+				userLosses.innerText = 0;
 			});
 		</script>
 	</body>

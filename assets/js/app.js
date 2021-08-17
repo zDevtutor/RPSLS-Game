@@ -45,6 +45,106 @@ const levelSelect = {
 	],
 };
 
+const playGame = (level, rounds) => {
+	// Cashing game DOM elements
+	const gameRounds = document.getElementById('rounds');
+	const playerScoreDOM = document.getElementById('player-score');
+	const computerScoreDOM = document.getElementById('computer-score');
+	const computerHand = document.getElementById('computer-hand');
+	const playerHand = document.getElementById('player-hand');
+	const gamePlay = document.getElementById('game-play');
+	const scoreResults = document.getElementById('score-results');
+
+	let playerScore = 0;
+	let computerScore = 0;
+
+	// Update Game rounds
+	gameRounds.innerHTML = rounds;
+
+	// Update Player and Computer scores
+	const updateScore = () => {
+		playerScoreDOM.innerText = playerScore;
+		computerScoreDOM.innerText = computerScore;
+	};
+
+	// Check if Game is over
+	const checkForGameOver = () => {
+		if (playerScore.toString() === rounds) {
+			alert('Congratulations! You Win');
+
+			// Save to local storage
+			localStorage.setItem(
+				'userWins',
+				Number(localStorage.getItem('userWins')) + 1
+			);
+
+			// Get redirect to homepage
+			window.location.href = './';
+		} else if (computerScore.toString() === rounds) {
+			alert("BadLuck, You've Lost. Try Again!");
+			localStorage.setItem(
+				'userLost',
+				Number(localStorage.getItem('userLost')) + 1
+			);
+
+			window.location.href = './';
+		}
+		return;
+	};
+
+	const compareHands = (playerChoice, computerChoice) => {
+		// Update Outcome
+		if (playerChoice === computerChoice.name) {
+			scoreResults.innerText = "It's A Draw!";
+		} else if (computerChoice.winsOver.includes(playerChoice)) {
+			scoreResults.innerText = 'Computer Wins!';
+			computerScore++;
+			updateScore();
+		} else {
+			scoreResults.innerText = 'Player Wins!';
+			playerScore++;
+			updateScore();
+		}
+
+		// Finish game and display results
+		checkForGameOver();
+		return;
+	};
+
+	// Create user options
+	const options = levelSelect[level];
+	const userOptions = document.createElement('div');
+	userOptions.className = 'row';
+
+	const userOptionsCol = document.createElement('div');
+	userOptionsCol.className = 'col';
+	userOptions.appendChild(userOptionsCol);
+
+	// Create userOptions section depending on level select
+	options.forEach(option => {
+		const optionImg = document.createElement('img');
+		optionImg.src = `assets/img/${option.name}.png`;
+		optionImg.alt = `${option.name}`;
+		optionImg.width = 80;
+		optionImg.className = 'btn';
+
+		userOptionsCol.appendChild(optionImg);
+
+		optionImg.addEventListener('click', e => {
+			const computerRandomNumber = Math.floor(Math.random() * options.length);
+			const computerChoice = options[computerRandomNumber];
+			const userChoice = e.target.alt;
+
+			// Update Images on choices
+			computerHand.src = `assets/img/${computerChoice.name}.png`;
+			playerHand.src = `assets/img/${userChoice}.png`;
+			compareHands(userChoice, computerChoice);
+		});
+	});
+
+	gamePlay.appendChild(userOptions);
+};
+
 // Get URL params(RoundNumber, GameLevel)
 const getUrlParams = () => {
 	const queryString = window.location.search;

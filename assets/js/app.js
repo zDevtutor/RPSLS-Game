@@ -44,3 +44,35 @@ const levelSelect = {
 		optionList.spock,
 	],
 };
+
+// Get URL params(RoundNumber, GameLevel)
+const getUrlParams = () => {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+
+	const gameOptions = {
+		roundsNumber: urlParams.get('roundsNumber'),
+		gameLevel: urlParams.get('gameLevel'),
+	};
+
+	return gameOptions;
+};
+
+// Validate URL params
+const validateUrlParams = () => {
+	const urlParams = getUrlParams();
+
+	const validLevels = Object.keys(levelSelect);
+
+	if (
+		validLevels.includes(urlParams.gameLevel) &&
+		urlParams.roundsNumber > 0 &&
+		urlParams.roundsNumber <= 10
+	) {
+		playGame(urlParams.gameLevel, urlParams.roundsNumber);
+	} else {
+		window.location.href = './';
+	}
+};
+
+validateUrlParams();

@@ -26,3 +26,21 @@ const optionList = {
 		winsOver: ['rock', 'scissors'],
 	},
 };
+
+//Configure the level of difficulty
+const levelSelect = {
+	level1: [optionList.rock, optionList.paper, optionList.scissors],
+	level2: [
+		optionList.rock,
+		optionList.paper,
+		optionList.scissors,
+		optionList.lizard,
+	],
+	level3: [
+		optionList.rock,
+		optionList.paper,
+		optionList.scissors,
+		optionList.lizard,
+		optionList.spock,
+	],
+};

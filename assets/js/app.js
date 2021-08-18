@@ -45,7 +45,39 @@ const levelSelect = {
 	],
 };
 
-const playGame = (level, rounds) => {
+// Get URL params(RoundNumber, GameLevel)
+function getUrlParams() {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+
+	const gameOptions = {
+		roundsNumber: urlParams.get('roundsNumber'),
+		gameLevel: urlParams.get('gameLevel'),
+	};
+
+	return gameOptions;
+}
+
+// Validate URL params
+function validateUrlParams() {
+	const urlParams = getUrlParams();
+
+	const validLevels = Object.keys(levelSelect);
+
+	if (
+		validLevels.includes(urlParams.gameLevel) &&
+		urlParams.roundsNumber > 0 &&
+		urlParams.roundsNumber <= 10
+	) {
+		playGame(urlParams.gameLevel, urlParams.roundsNumber);
+	} else {
+		window.location.href = './';
+	}
+}
+
+validateUrlParams();
+
+function playGame(level, rounds) {
 	// Cashing game DOM elements
 	const gameRounds = document.getElementById('rounds');
 	const playerScoreDOM = document.getElementById('player-score');
@@ -60,56 +92,6 @@ const playGame = (level, rounds) => {
 
 	// Update Game rounds
 	gameRounds.innerHTML = rounds;
-
-	// Update Player and Computer scores
-	const updateScore = () => {
-		playerScoreDOM.innerText = playerScore;
-		computerScoreDOM.innerText = computerScore;
-	};
-
-	// Check if Game is over
-	const checkForGameOver = () => {
-		if (playerScore.toString() === rounds) {
-			alert('Congratulations! You Win');
-
-			// Save to local storage
-			localStorage.setItem(
-				'userWins',
-				Number(localStorage.getItem('userWins')) + 1
-			);
-
-			// Get redirect to homepage
-			window.location.href = './';
-		} else if (computerScore.toString() === rounds) {
-			alert("BadLuck, You've Lost. Try Again!");
-			localStorage.setItem(
-				'userLost',
-				Number(localStorage.getItem('userLost')) + 1
-			);
-
-			window.location.href = './';
-		}
-		return;
-	};
-
-	const compareHands = (playerChoice, computerChoice) => {
-		// Update Outcome
-		if (playerChoice === computerChoice.name) {
-			scoreResults.innerText = "It's A Draw!";
-		} else if (computerChoice.winsOver.includes(playerChoice)) {
-			scoreResults.innerText = 'Computer Wins!';
-			computerScore++;
-			updateScore();
-		} else {
-			scoreResults.innerText = 'Player Wins!';
-			playerScore++;
-			updateScore();
-		}
-
-		// Finish game and display results
-		checkForGameOver();
-		return;
-	};
 
 	// Create user options
 	const options = levelSelect[level];
@@ -143,36 +125,54 @@ const playGame = (level, rounds) => {
 	});
 
 	gamePlay.appendChild(userOptions);
-};
 
-// Get URL params(RoundNumber, GameLevel)
-const getUrlParams = () => {
-	const queryString = window.location.search;
-	const urlParams = new URLSearchParams(queryString);
+	function compareHands(playerChoice, computerChoice) {
+		// Update Outcome
+		if (playerChoice === computerChoice.name) {
+			scoreResults.innerText = "It's A Draw!";
+		} else if (computerChoice.winsOver.includes(playerChoice)) {
+			scoreResults.innerText = 'Computer Wins!';
+			computerScore++;
+			updateScore();
+		} else {
+			scoreResults.innerText = 'Player Wins!';
+			playerScore++;
+			updateScore();
+		}
 
-	const gameOptions = {
-		roundsNumber: urlParams.get('roundsNumber'),
-		gameLevel: urlParams.get('gameLevel'),
-	};
-
-	return gameOptions;
-};
-
-// Validate URL params
-const validateUrlParams = () => {
-	const urlParams = getUrlParams();
-
-	const validLevels = Object.keys(levelSelect);
-
-	if (
-		validLevels.includes(urlParams.gameLevel) &&
-		urlParams.roundsNumber > 0 &&
-		urlParams.roundsNumber <= 10
-	) {
-		playGame(urlParams.gameLevel, urlParams.roundsNumber);
-	} else {
-		window.location.href = './';
+		// Finish game and display results
+		checkForGameOver();
+		return;
 	}
-};
 
-validateUrlParams();
+	// Update Player and Computer scores
+	function updateScore() {
+		playerScoreDOM.innerText = playerScore;
+		computerScoreDOM.innerText = computerScore;
+	}
+
+	// Check if Game is over
+	function checkForGameOver() {
+		if (playerScore.toString() === rounds) {
+			alert('Congratulations! You Win');
+
+			// Save to local storage
+			localStorage.setItem(
+				'userWins',
+				Number(localStorage.getItem('userWins')) + 1
+			);
+
+			// Get redirect to homepage
+			window.location.href = './';
+		} else if (computerScore.toString() === rounds) {
+			alert("BadLuck, You've Lost. Try Again!");
+			localStorage.setItem(
+				'userLost',
+				Number(localStorage.getItem('userLost')) + 1
+			);
+
+			window.location.href = './';
+		}
+		return;
+	}
+}

@@ -49,3 +49,11 @@ By clicking on the scoreboard button there will be a popup with all the wins and
 ![Game Form](/assets/img/screenshots/Game-form.png)
 
 Through this form you'll be able to enter number of rounds to be played as well as selecting level of diffculty.
+
+---
+
+### Game Area
+
+![Game Area](/assets/img/screenshots/Game-Area.png)
+
+Here the user is able to select between different options and the player score as well as the computer score gots updated to show the winner and the loser of the round. After reaching the number of rounds detected there will be an alert with a message detecting if the user wins or lost. The user is able to get back to the homepage at any given time by clicking on the back button.

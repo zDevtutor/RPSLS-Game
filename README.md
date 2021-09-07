@@ -42,11 +42,12 @@ By clicking on the how-to-play button there will be a popup with all the game ru
 
 ![Scoreboard button](/assets/img/screenshots/Scoreboard-btn.png)
 ![How to play popup](/assets/img/screenshots/Scoreboard-popup.png)
+
 By clicking on the scoreboard button there will be a popup with all the wins and losses presented in a table and with the ablility to clear the score by clicking the **clear Scores** button
 
 #### Game Form
 
-![Game Form](/assets/img/screenshots/Game-form.png)
+![Game Area](/assets/img/screenshots/Game-Form.png)
 
 Through this form you'll be able to enter number of rounds to be played as well as selecting level of diffculty.
 

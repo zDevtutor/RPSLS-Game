@@ -6,6 +6,14 @@ A simple JavaScript game of Rock, Paper, Scissors, Lizard, and Spock where you a
 
 ![Final Product Screenshot - Game area](/assets/img/screenshots/RPSLS_Screenshot-2.png)
 
+## User Experience
+
+### User Stories
+
+**As a site user, I want to be able to:**
+
+- To play the rock, paper, scissors, lizard and spock game with ease. I want to be able to decide number of rounds to be played. To challange the computer by selecting level of diffculity which decides number of options be selected from.
+
 ## Features
 
 ### The game rules

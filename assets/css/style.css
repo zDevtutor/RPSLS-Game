@@ -75,17 +75,7 @@ th {
 	display: block;
 }
 
-#user-options img {
-	width: 75px;
-}
-
 /* Mobile Screens */
-@media screen and (max-width: 768px) and (min-width: 500px) {
-	.container {
-		max-width: 60%;
-	}
-}
-
 @media screen and (max-width: 500px) {
 	#game-entry > img {
 		width: 70%;

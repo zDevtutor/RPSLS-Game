@@ -14,6 +14,29 @@ A simple JavaScript game of Rock, Paper, Scissors, Lizard, and Spock where you a
 
 - To play the rock, paper, scissors, lizard and spock game with ease. I want to be able to decide number of rounds to be played. To challange the computer by selecting level of diffculity which decides number of options be selected from.
 
+## Design
+
+The game was designed to be simple, modern, intuitive and to provide a good user experience by making the game easy to play and enjoyable.
+
+### Color Scheme
+
+The colors used for making the prject:
+
+- Primary color which is **#512d6d**
+- Dark color which is **#283149**
+- Light color which is **#eeeeee**
+- Play color which is **#f8485e**
+- Hover color which is **#00c1d4**
+
+### Typography
+
+- The Header font is Luckiest Guy
+- The website content font is Roboto
+
+### Wireframes
+
+![Final Product Screenshot - Game area](/wireframes/RPSLS-Wireframe.png)
+
 ## Features
 
 ### The game rules

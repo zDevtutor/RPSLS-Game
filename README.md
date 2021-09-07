@@ -1,7 +1,5 @@
 # ROCK, PAPER, SCISSORS, LIZARD, SPOCK
 
----
-
 A simple JavaScript game of Rock, Paper, Scissors, Lizard, and Spock where you are able to play against the computer and select between these five options to compare your selection against the computer selection and decide the winner. The game has a twist where you can select the level of difficulty of 3 levels and the number of rounds you would like to play against the computer. All the scores are saved where you can access them at any time.
 
 ![Final Product Screenshot - Hompage](/assets/img/screenshots/RPSLS_Screenshot-1.png)
@@ -9,8 +7,6 @@ A simple JavaScript game of Rock, Paper, Scissors, Lizard, and Spock where you a
 ![Final Product Screenshot - Game area](/assets/img/screenshots/RPSLS_Screenshot-2.png)
 
 ## Features
-
----
 
 ### The game rules
 
@@ -50,6 +46,6 @@ By clicking on the scoreboard button there will be a popup with all the wins and
 
 #### Game Form
 
-![How to play popup](/assets/img/screenshots/Game-form.png)
+![Game Form](/assets/img/screenshots/Game-form.png)
 
 Through this form you'll be able to enter number of rounds to be played as well as selecting level of diffculty.

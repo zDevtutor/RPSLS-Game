@@ -75,7 +75,11 @@ There were some errors in the HTML files that related to duplicated id values, u
     ![CSS Validation](/assets/img/screenshots/CSS-Validation.png)
 - **JavaScript**
   - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
-    The following metrics were returned: - There are 8 functions in this file. - Function with the largest signature take 2 arguments, while the median is 0.5. - Largest function has 21 statements in it, while the median is 6.5. - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
+    The following metrics were returned:
+    - There are 8 functions in this file.
+    - Function with the largest signature take 2 arguments, while the median is 0.5.
+    - Largest function has 21 statements in it, while the median is 6.5.
+    - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
 
 #### Unfixed Bugs
 

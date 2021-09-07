@@ -95,3 +95,14 @@ The site was deployed to Vercel. The steps to deploy are as follows:
 - Create a new project and import the Git repository.
 
 The live link can be found here - https://rpsls-game.vercel.app/
+
+## Credits
+
+### Content
+
+- Fonts used are from [google fonts](https://fonts.google.com/)
+- Instructions on game rules and how to play the game are from https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock
+
+### Media
+
+- All of the images were taken from [pngwing](https://www.pngwing.com/)

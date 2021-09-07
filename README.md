@@ -80,3 +80,14 @@ There were some errors in the HTML files that related to duplicated id values, u
 #### Unfixed Bugs
 
 - It's not a bug. It's just the HTML validation warning of not using heading tags within the container section. It's recommended to use heading tags within section tags but since it's not needed in the project markup I didn't use it.
+
+## Deployment
+
+The site was deployed to Vercel. The steps to deploy are as follows:
+
+- Create a new GitHub repository with a project name of "RPSLS-Game".
+- Push your project to the GitHub repository.
+- Open the Vercel website and login (Signup if you don't have an account)
+- Create a new project and import the Git repository.
+
+The live link can be found here - https://rpsls-game.vercel.app/

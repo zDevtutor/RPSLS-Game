@@ -58,3 +58,25 @@ Through this form you'll be able to enter number of rounds to be played as well 
 ![Game Area](/assets/img/screenshots/Game-Area.png)
 
 Here the user is able to select between different options and the player score as well as the computer score gots updated to show the winner and the loser of the round. After reaching the number of rounds detected there will be an alert with a message detecting if the user wins or lost. The user is able to get back to the homepage at any given time by clicking on the back button.
+
+---
+
+## Testing
+
+There were some errors in the HTML files that related to duplicated id values, using of aria-describeby where it doens't point to anything in the page and lastly not having the first option with an empty value. No Errors were found in the Javascript file as well as the CSS file. As a result All code pass the official validators without issues.
+
+### Validator Testing
+
+- **HTML**
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frpsls-game.vercel.app%2Findex.html)
+    ![HTML Validation](/assets/img/screenshots/HTML-Validation.png)
+- **CSS**
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+    ![CSS Validation](/assets/img/screenshots/CSS-Validation.png)
+- **JavaScript**
+  - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    The following metrics were returned: - There are 8 functions in this file. - Function with the largest signature take 2 arguments, while the median is 0.5. - Largest function has 21 statements in it, while the median is 6.5. - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
+
+#### Unfixed Bugs
+
+- It's not a bug. It's just the HTML validation warning of not using heading tags within the container section. It's recommended to use heading tags within section tags but since it's not needed in the project markup I didn't use it.
